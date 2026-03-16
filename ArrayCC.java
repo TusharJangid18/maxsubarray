@@ -20,8 +20,21 @@ public class ArrayCC {
         }
         System.out.println("max sum is "+maxsum);
     }
+    public static void kadane(int numbers[]){
+        int currsum=0;
+        int maxsum=Integer.MIN_VALUE;
+        for(int i=0;i<numbers.length;i++){
+            currsum+=numbers[i];
+            if(currsum<0){
+                currsum=0;
+            }
+            maxsum=Math.max(currsum, maxsum);
+        }
+        System.out.println("max sum is "+maxsum);
+    }
     public static void main(String args[]){
-        int numbers[]={1,-2,6,-1,3};
+        int numbers[]={-2,-3,4,-1,-2,1,5,-3};
         maxsubarray(numbers);
+        kadane(numbers);
     }
 }
